@@ -1,0 +1,64 @@
+[versions]
+agp = "8.2.2"
+kotlin_language = "1.9.21"
+kotlin_serialization = "1.6.2"
+kotlin_coroutines = "1.7.3"
+kotlin_ksp = "1.9.21-1.0.16"
+core-ktx = "1.12.0"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
+lifecycle-runtime-ktx = "2.7.0"
+activity-compose = "1.8.2"
+compose-bom = "2024.01.00"
+retrofit = "2.9.0"
+koin = "3.5.3"
+paging = "3.3.0-alpha02"
+
+[libraries]
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+ui = { group = "androidx.compose.ui", name = "ui" }
+ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-kotlinx-serialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0"
+
+okhttp-core = "com.squareup.okhttp3:okhttp:4.12.0"
+
+kotlin_coroutines_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin_coroutines" }
+kotlin_coroutines_android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin_coroutines" }
+
+kotlin_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlin_coroutines" }
+kotlin_serialization_core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlin_serialization" }
+kotlin_serialization_json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin_serialization" }
+
+koin_core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin_android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin_android_compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin_test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
+koin_junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin" }
+
+paging_common = { module = "androidx.paging:paging-common", version.ref = "paging" }
+paging_runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
+paging_compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
+
+[plugins]
+android_application = { id = "com.android.application", version.ref = "agp" }
+android_library = { id = "com.android.library", version.ref = "agp" }
+kotlin_android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin_language" }
+kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin_language" }
+kotlin_ksp = { id = "com.google.devtools.ksp", version.ref = "kotlin_ksp" }
+kotlin_serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin_language" }
+
+
