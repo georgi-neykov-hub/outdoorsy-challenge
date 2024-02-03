@@ -17,3 +17,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "outdoorsy-challenge"
 
+include(":app")
+include(":rentals:model")
+include(":rentals:data")
+include(":rentals:domain")
