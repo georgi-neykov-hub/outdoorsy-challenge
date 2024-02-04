@@ -15,7 +15,7 @@ interface RentalsRepository {
      * @param pageLimit optional, number of elements per page,(enables pagination of results)
      * @param pageOffset optional, the zero-based index of the first element to be loaded
      * @param address optional, filter results close to a location given via an address
-     * @param query optional, filter results by keywords
+     * @param keywords optional, filter results by keywords
      * @return results as a [List<RentalEntry>]
      * @throws IllegalArgumentException when [pageLimit] != `null`, but is < 0
      * @throws IllegalArgumentException when [pageLimit] != `null`, but [pageOffset] == `null`
@@ -26,7 +26,7 @@ interface RentalsRepository {
         pageLimit: Int? = null,
         pageOffset: Int? = null,
         address: String? = null,
-        query: String? = null
+        keywords: Collection<String>? = null
     ): List<RentalEntry>
 }
 
@@ -43,6 +43,6 @@ internal class DefaultRentalsRepository(private val rentalsDataSource: RentalsDa
         pageLimit: Int?,
         pageOffset: Int?,
         address: String?,
-        query: String?
-    ): List<RentalEntry> = rentalsDataSource.invoke(pageLimit, pageOffset, address, query)
+        keywords: Collection<String>?
+    ): List<RentalEntry> = rentalsDataSource.invoke(pageLimit, pageOffset, address, keywords)
 }

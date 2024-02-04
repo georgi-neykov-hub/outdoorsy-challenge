@@ -9,7 +9,7 @@ import org.junit.Assert.assertSame
 import org.junit.Before
 import org.junit.Test
 
-class RentalsRemoteDataSourceTest {
+class RemoteRentalsDataSourceTest {
 
     private lateinit var dataSource: RemoteRentalsDataSource
     private lateinit var rentalsApi: RentalsApi
@@ -22,15 +22,23 @@ class RentalsRemoteDataSourceTest {
 
     @Test
     fun invoke_Delegates_To_RentalsApi_listRentals() = runTest {
-        val query = "Something"
+        val keywords = setOf("Something", "nothing")
         val pageLimit = 12
         val pageOffset = 5
         val address = "North Pole"
         val expectedEntries = mutableListOf<RentalEntry>()
+        val expectedQuery = keywords.joinToString(separator = ",")
 
-        val actualEntries = dataSource.invoke(pageLimit, pageOffset, address, query)
+        val actualEntries = dataSource.invoke(pageLimit, pageOffset, address, keywords)
 
         assertSame(expectedEntries, actualEntries)
-        verifyBlocking(rentalsApi, times(1)) { listRentals(pageLimit, pageOffset, address, query) }
+        verifyBlocking(rentalsApi, times(1)) {
+            listRentals(
+                pageLimit,
+                pageOffset,
+                address,
+                expectedQuery
+            )
+        }
     }
 }

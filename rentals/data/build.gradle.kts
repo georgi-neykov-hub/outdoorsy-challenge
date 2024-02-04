@@ -10,7 +10,6 @@ dependencies {
     implementation(libs.kotlin.serialization.json)
     api(libs.koin.core)
     api(projects.rentals.model)
-    api(libs.paging.common)
 
     testImplementation(libs.junit)
     testImplementation(libs.mockito.kotlin)

@@ -11,6 +11,6 @@ internal interface RentalsDataSource {
         pageLimit: Int? = null,
         pageOffset: Int? = null,
         address: String? = null,
-        query: String? = null
+        keywords: Collection<String>? = null
     ): List<RentalEntry>
 }

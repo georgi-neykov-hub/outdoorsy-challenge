@@ -51,6 +51,8 @@ android {
 }
 
 dependencies {
+    implementation(projects.rentals.domain)
+    implementation(libs.koin.android)
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

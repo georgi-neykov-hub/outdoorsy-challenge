@@ -10,9 +10,16 @@ internal class RemoteRentalsDataSource(
         pageLimit: Int?,
         pageOffset: Int?,
         address: String?,
-        query: String?
+        keywords: Collection<String>?
     ): List<RentalEntry> {
         requireValidPaginationParameters(pageLimit, pageOffset)
-        return rentalsApi.listRentals((pageLimit), pageOffset, address, query).entries
+        return rentalsApi.listRentals(
+            pageLimit = pageLimit,
+            pageOffset = pageOffset,
+            address = address,
+            query = keywords
+                ?.takeIf(Collection<String>::isNotEmpty)
+                ?.joinToString(separator = ",")
+        ).entries
     }
 }
