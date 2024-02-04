@@ -14,6 +14,7 @@ compose-bom = "2024.01.00"
 retrofit = "2.9.0"
 koin = "3.5.3"
 paging = "3.3.0-alpha02"
+mockito_kotlin = "2.2.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -38,7 +39,6 @@ okhttp-core = "com.squareup.okhttp3:okhttp:4.12.0"
 
 kotlin_coroutines_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin_coroutines" }
 kotlin_coroutines_android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin_coroutines" }
-
 kotlin_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlin_coroutines" }
 kotlin_serialization_core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlin_serialization" }
 kotlin_serialization_json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin_serialization" }
@@ -52,6 +52,9 @@ koin_junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin"
 paging_common = { module = "androidx.paging:paging-common", version.ref = "paging" }
 paging_runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
 paging_compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
+
+mockito_kotlin = { module = "com.nhaarman.mockitokotlin2:mockito-kotlin", version.ref = "mockito_kotlin" }
+
 
 [plugins]
 android_application = { id = "com.android.application", version.ref = "agp" }
