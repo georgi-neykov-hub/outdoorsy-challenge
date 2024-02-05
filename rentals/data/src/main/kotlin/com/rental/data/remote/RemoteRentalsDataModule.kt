@@ -1,28 +1,27 @@
 package com.rental.data.remote
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.rental.model.RentalEntry
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.modules.SerializersModule
-import kotlinx.serialization.modules.plus
-import kotlinx.serialization.modules.polymorphic
-import kotlinx.serialization.modules.subclass
-import okhttp3.Call
 import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.OkHttpClient
+import org.koin.core.module.dsl.bind
+import org.koin.core.module.dsl.singleOf
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
-private val Outdoorly = named("Outdoorly")
+private val OutdoorlyAPI = named("Outdoorly API")
 
 val RemoteRentalsDataModule = module {
-    single<RentalsApi> {
-        get<Retrofit>(Outdoorly).create(RentalsApi::class.java)
+    singleOf(::RemoteRentalsDataSource) {
+        bind<RentalsDataSource>()
     }
 
-    single<Retrofit>(Outdoorly) {
-        val serializationFormat = get<Json>(Outdoorly)
+    single<RentalsApi> {
+        get<Retrofit>(OutdoorlyAPI).create(RentalsApi::class.java)
+    }
+
+    single<Retrofit>(OutdoorlyAPI) {
+        val serializationFormat = get<Json>(OutdoorlyAPI)
         val converterFactory =
             serializationFormat.asConverterFactory("application/json".toMediaType())
         Retrofit.Builder()
@@ -32,20 +31,10 @@ val RemoteRentalsDataModule = module {
             .build()
     }
 
-    single(Outdoorly) {
+    single(OutdoorlyAPI) {
         Json {
-            // Map of `RentalEntry` to be serialized as `RemoteRentalEntry`.
-            this.serializersModule += SerializersModule {
-                polymorphic(RentalEntry::class) {
-                    subclass(RemoteRentalEntry::class)
-                }
-            }
+            // Keep to `true` to allow skipping unwanted data
+            ignoreUnknownKeys = true
         }
-    }
-
-    single<Call.Factory> {
-        OkHttpClient.Builder()
-            .cache(getOrNull()/* Optional cache configured outside */)
-            .build()
     }
 }
