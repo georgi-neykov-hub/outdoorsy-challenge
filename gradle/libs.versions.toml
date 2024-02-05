@@ -11,10 +11,12 @@ espresso-core = "3.5.1"
 lifecycle-runtime-ktx = "2.7.0"
 activity-compose = "1.8.2"
 compose-bom = "2024.01.00"
+compose-compiler = "1.5.7"
 retrofit = "2.9.0"
 koin = "3.5.3"
 paging = "3.3.0-alpha02"
 mockito_kotlin = "2.2.0"
+coil = "2.5.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -52,6 +54,10 @@ koin_junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin"
 paging_common = { module = "androidx.paging:paging-common", version.ref = "paging" }
 paging_runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
 paging_compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
+
+coil_core = { module = "io.coil-kt:coil-base", version.ref = "coil" }
+coil_compose = { module = "io.coil-kt:coil-compose-base", version.ref = "coil" }
+
 
 mockito_kotlin = { module = "com.nhaarman.mockitokotlin2:mockito-kotlin", version.ref = "mockito_kotlin" }
 

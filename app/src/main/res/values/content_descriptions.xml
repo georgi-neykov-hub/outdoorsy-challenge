@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_description_rental_primary_image">Rental Primary Image</string>
+    <string name="content_description_search_icon">Search Icon</string>
+    <string name="content_description_warning_icon">Warning icon</string>
+
+</resources>

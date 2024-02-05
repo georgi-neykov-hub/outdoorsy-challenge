@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Outdoorsy Challenge</string>
+    <string name="action_retry">Retry</string>
+    <string name="title_rental_listing_load_error">Something went wrong</string>
+    <string name="message_filter_results">Filter results</string>
+    <string name="message_no_results_found">No results found</string>
 </resources>
